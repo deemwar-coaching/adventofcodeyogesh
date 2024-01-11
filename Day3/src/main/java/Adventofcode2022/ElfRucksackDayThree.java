@@ -26,15 +26,15 @@ public class ElfRucksackDayThree {
 
         HashMap<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < 26; i++) {
-            map.put((char) ('a' + i), i + 1);
-            map.put((char) ('A' + i), i + 27);
+            map.put((char) ('a' + i), i + 1);// for lowercase letters using key as a to z with values 1 to 26
+            map.put((char) ('A' + i), i + 27);//for uppercase letters as keys and values 27 to 52
         }
 
         ArrayList<Integer> values = sorterobj.mapValues(sortedLines, map);
         System.out.println(values);
 
         int totalSum = sorterobj.sumOfValues(values);
-        System.out.println("The sum of all values in the final displayed array list is: " + totalSum);
+        System.out.println("The sum of all values in the final displayed array list: " + totalSum);
     }
 
     public ArrayList<String> Compartments(ArrayList<String> lines){
@@ -44,7 +44,7 @@ public class ElfRucksackDayThree {
             String firstHalf = line.substring(0, size/2);
             String secondHalf = line.substring(size/2);
 
-            // Find common characters
+            // Find common chars
             ArrayList<Character> commonChars = new ArrayList<>();
             for (char c : firstHalf.toCharArray()) {
                 if (secondHalf.indexOf(c) != -1 && !commonChars.contains(c)) {
